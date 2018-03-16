@@ -2,23 +2,32 @@
 #include<cstring>
 using namespace std;
 
-void searchvowel(char *, int);
+class strng
+{
+    char str[100];
+public:
+    void input()
+    {
+        cout << "Enter string: ";
+        fgets(str, 100, stdin);
+    }
+
+    void searchvowel()
+    {
+        for(int i = 0; i < strlen(str); i++)
+        {
+            if(str[i] == 'a ' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+               str[i] == 'A ' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+                cout << endl << "Found " << str[i] << " at location " << i+1;
+            }
+        }
+    }
+};
+
 
 int main()
 {
-    char str[100];
-    cout << "Enter string: ";
-    fgets(str, 100, stdin);
-    searchvowel(str, strlen(str));
-}
-
-void searchvowel(char *s, int n)
-{
-    for(int i = 0; i < n; i++)
-    {
-        if(s[i] == 'a ' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' ||
-           s[i] == 'A ' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U') {
-            cout << endl << "Found " << s[i] << " at location " << i+1;
-        }
-    }
+    strng str;
+    str.input();
+    str.searchvowel();
 }
