@@ -5,10 +5,8 @@ class Time
 {
     int hour,mins,sec;
 public:
-    Time(){
-    hour=0;mins=0;sec=0;}
 
-    Time(int h,int m,int s){
+    Time(int h=0,int m=0,int s=0){
     hour=h;mins=m;sec=s;}
     Time add(Time &obj){
     Time res;
